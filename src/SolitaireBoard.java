@@ -17,8 +17,6 @@
     along with FourRowSolitaire.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package FourRowSolitaire;
-
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
@@ -113,7 +111,7 @@ public class SolitaireBoard extends JFrame
         {
             columns[i] = new Column();
             columns[i].addMouseListener(ml);
-            //columns[i].addMouseMotionListener(ml);
+            columns[i].addMouseMotionListener(ml);
         }
 
         mainPanel.add(columns[0], SolitaireLayout.COLUMN_ONE);

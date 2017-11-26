@@ -17,27 +17,22 @@
     along with FourRowSolitaire.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package FourRowSolitaire;
+import java.awt.Point;
 
 /**
- * Class: Column
+ * Class: SingleCell
  *
- * Description: The Column class manages a single column on the board.
+ * Description: The SingleCell class manages an individual cell that can only hold one card.
  *
  * @author Matt Stephen
  */
-public class Column extends CardStack
+public class SingleCell extends CardStack
 {
-    public Column() {}
+    public SingleCell() {}
 
     public Card push(Card card)
     {
-        if(isEmpty() && card.getNumber() == Card.KING)
-        {
-            super.push(card);
-            return card;
-        }
-        else if(card.getColor() != peek().getColor() && card.getNumber() == peek().getNumber() - 1)
+        if(isEmpty())
         {
             super.push(card);
             return card;
@@ -46,15 +41,16 @@ public class Column extends CardStack
         return null;
     }
 
+    public Card getCardAtLocation(Point p)
+    {
+        return peek();
+    }
+
     public boolean isValidMove(Card card)
     {
-        if(isEmpty() && card.getNumber() == Card.KING)
+        if(isEmpty())
         {
             return true;
-        }
-        else if(!isEmpty() && card.getColor() != peek().getColor() && card.getNumber() == (peek().getNumber() - 1))
-        {
-            return false;
         }
 
         return false;
@@ -62,6 +58,6 @@ public class Column extends CardStack
 
     public boolean isValidMove(CardStack stack)
     {
-        return isValidMove(stack.peek());
+        return false;
     }
 }
