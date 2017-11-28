@@ -57,7 +57,7 @@ public class ChangeOptions extends JDialog implements ActionListener
     public ChangeOptions(JFrame parent, int currentDraw, int timer, int animation, int sounds, int difficulty)
     {
         setTitle("Options");
-        setSize(340,190);
+        setSize(370,190);
         setDefaultCloseOperation(JDialog.HIDE_ON_CLOSE);
         setModalityType(JDialog.ModalityType.APPLICATION_MODAL);
         setLocationRelativeTo(parent);
@@ -83,7 +83,7 @@ public class ChangeOptions extends JDialog implements ActionListener
         drawPanel.add(drawOne);
         drawPanel.add(drawThree);
 
-        drawPanel.setMaximumSize(new Dimension(110,80));
+        drawPanel.setMaximumSize(new Dimension(120,80));
         drawPanel.setMinimumSize(drawPanel.getMaximumSize());
         drawPanel.setPreferredSize(drawPanel.getMaximumSize());
 
@@ -102,7 +102,7 @@ public class ChangeOptions extends JDialog implements ActionListener
         checkBoxPanel.add(winAnimationCheck);
         checkBoxPanel.add(winSoundsCheck);
 
-        checkBoxPanel.setMaximumSize(new Dimension(120,80));
+        checkBoxPanel.setMaximumSize(new Dimension(140,80));
         checkBoxPanel.setMinimumSize(checkBoxPanel.getMaximumSize());
         checkBoxPanel.setPreferredSize(checkBoxPanel.getMaximumSize());
 
@@ -147,7 +147,7 @@ public class ChangeOptions extends JDialog implements ActionListener
         difficultyPanel.add(medium);
         difficultyPanel.add(hard);
 
-        difficultyPanel.setMaximumSize(new Dimension(110,80));
+        difficultyPanel.setMaximumSize(new Dimension(120,80));
         difficultyPanel.setMinimumSize(drawPanel.getMaximumSize());
         difficultyPanel.setPreferredSize(drawPanel.getMaximumSize());
 
