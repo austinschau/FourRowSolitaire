@@ -65,7 +65,7 @@ public class AcePile extends CardStack
 
     public boolean isValidMove(Card card)
     {
-        if(isEmpty() && card.getSuit().equals(suit))
+        if(isEmpty() && card.getSuit().equals(suit) && card.getNumber() == 1)
         {
             return true;
         }
