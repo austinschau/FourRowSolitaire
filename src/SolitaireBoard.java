@@ -1479,7 +1479,8 @@ public class SolitaireBoard extends JFrame
 
             if(winAnimationStatus != 0 || winSoundsStatus != 0)
             {
-                new WinScreen(winAnimationStatus, winSoundsStatus);
+                temp = new WinScreen(winAnimationStatus, winSoundsStatus); //store this in the temp WinScreen var so we can access it's methods later
+                setVisible(false);	//hide the game window so the fireworks can be seen.
             }
 
             int playAgain = JOptionPane.showConfirmDialog(SolitaireBoard.this, "Play Again?", "You Won!", JOptionPane.YES_NO_OPTION);
@@ -1488,6 +1489,8 @@ public class SolitaireBoard extends JFrame
             {
                 recordGame(GAME_WON);
                 newGame(GAME_WON);
+                setVisible(true);	//reset the visibility of the main game screen
+                temp.dispose();		//destroy the fireworks window so it doesn't interfere with the game window.
             }
             else//(playAgain == JOptionPane.NO_OPTION)
             {
